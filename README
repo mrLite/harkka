@@ -1,0 +1,7 @@
+Lukujärjestystyökalu lukee luentojen ja harjoitusryhmien tiedot ja tuottaa käyttäjän antamien parametrien mukaan pdf- ja/tai html-muotoisen tiedoston, jonka sisältönä on viikkokohtainen lukujärjestys havainnollisena matriisina, jonka rivit kuvaavat kellonaikoja ja sarakkeet viikonpäiviä. Ohjelman tarkoitettu käyttäjäsegmentti on yliopisto-opiskelijat.
+
+Ohjelmaa käytetään komentoriviltä, mutta varsinaista interaktiivista käyttöliittymää ei ole, sillä luento- ja harjoitusryhmätiedot (kurssin nimi, luento vai laskuharjoitus, aika ja paikka) luetaan erillisestä, ohjelman käyttäjän muokattavissa olevasta YAML-muotoisesta konfiguraatiotiedostosta. Tuloksena saatavan html-tiedoston CSS-tyylitiedosto on niin ikään ohjelman käyttäjän kustomoitavissa, mutta pdf-tiedoston ulkoasu ei luultavasti tule olemaan muokattavissa.
+
+Ohjelmaa ajettaessa käyttäjä voi määritellä komentoriviparametreina haluamansa tiedostoformaatit (-pdf ja -html, html vakiona jos parametreja ei annettu) ja tuotettavien tiedostojen nimet (tiedostonimissäkin vakiot, ellei parametreja annettu).
+
+Ohjelma varautuu virheellisiin syöttöihin sekä komentoriviparametreissa, että konfiguraatiotiedostossa. Esimerkiksi jos käyttäjä yrittää ajaa ohjelmaa parametrilla ’-pfd’, ohjelma tulostaa käyttöohjeet, tai jos konfiguraatiossa on määritelty luento alkamaan loppumisajan jälkeen, jätetään kyseinen kohta huomiotta ja tulostetaan käyttäjälle huomautus.
