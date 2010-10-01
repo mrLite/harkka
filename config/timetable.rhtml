@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Timetable</title>
+	<style type="text/css">
+		body { font-family: Georgia; font-size: 1em; margin: 0; }
+
+		h1 { font-size: 1.8em; }
+
+		h2 { font-size: 1.3em; display: inline; }
+
+		tr {}
+		td {
+			width: 100px;
+			height: 40px;
+			padding: 5px;
+			border: 1px dotted silver;
+			border-top: none; border-left: none;
+		}
+		td.klo { width: 50px; background-color: #DDC; font-weight: bold; border: none; }
+		td.ma { background-color: #ffc7c7; }
+		td.fy { background-color: #c7ffc7; }
+		td.tkt { background-color: #c7c7ff; }
+		td.ma_laskarit { background-color: #ffe9e9; font-size: 0.8em; }
+		td.fy_laskarit { background-color: #e9ffe9; font-size: 0.8em; }
+		td.tkt_laskarit { background-color: #e9e9ff; font-size: 0.8em; }
+
+		a, a:visited { text-decoration: none; border-bottom: 2px dotted silver; color: orange;}
+		a:hover { text-decoration: none; border-bottom: 2px dotted gray; }
+
+		#wrapper {
+			width: 600px;
+			margin: 0 auto;
+			border: 1px solid silver; border-top: none;
+			background-color: #EED;
+		}
+
+		#header {
+			border-bottom: 1px dotted silver;
+			padding: 1em 3em 2em;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="wrapper">
+	<div id="header">
+	<h1>Timetable</h1>
+	</div>
+	
+	<table>
+		<tr id="1">
+			<td class="klo"></td>
+			<td class="klo">MA</td>
+			<td class="klo">TI</td>
+			<td class="klo">KE</td>
+			<td class="klo">TO</td>
+			<td class="klo">PE</td>
+		<% (2..11).each do |row| %>
+			<%= "<tr id=\"#{row}\"" %>
+				<%= "<td class=\"klo\">"+(row+6).to_s+"-"+(row+7).to_s+"</td>" %>
+			<% 5.times do %>
+				<%= "<td></td>" %>
+			<% end %>
+		<% end %>
+	</table>
+	</div>
+</body>
+</html>

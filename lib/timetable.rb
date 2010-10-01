@@ -2,7 +2,7 @@ require 'pdf'
 require 'html'
 
 module TimeTable
-  USAGE = "Usage: ruby timetable.rb [-pdf] [filename.pdf] [-html] [filename.html]\n"
+  USAGE = "Usage: ruby timetable.rb [-pdf] [filename] [-html] [filename]\n"
   USAGE << "Default output is a html file, and if no filename is given it's timetable.html"
   
   ARGV.each do |arg|
@@ -19,6 +19,9 @@ module TimeTable
     
     if pdf_filename and pdf_filename != "-html"
       puts "pdf-tiedosto: #{pdf_filename}"
+      
+      pdf_file = Pdf.new("PDF-tiedostoon.", pdf_filename)
+      pdf_file.produce_pdf
     end
   end
   
@@ -27,10 +30,9 @@ module TimeTable
     
     if html_filename and html_filename != "-pdf"
       puts "html-tiedosto: #{html_filename}"
-    
-      File.open(html_filename, 'w') do |file|
-        file.write "kirjoitetaan html-tiedostoon."
-      end
+      
+      html_file = Html.new(html_filename)
+      html_file.produce_html
     end
   end
 end
