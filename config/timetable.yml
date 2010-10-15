@@ -1,0 +1,22 @@
+courses:
+    - 
+        name: Laskennan mallit
+        lecturer: Joku Heppu
+        times:
+            - 
+                day: mon
+                time: 12-14
+                location: A111
+    
+    - 
+        name: C-ohjelmointi
+        lecturer: Toinen Heppu
+        times:
+            - 
+                day: tue
+                time: 14-16
+                location: CK112
+            - 
+                day: thu
+                time: 10-12
+                location: CK112
