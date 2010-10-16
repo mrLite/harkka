@@ -11,7 +11,7 @@ class Html
   def produce_html
     html = ERB.new File.new("../config/timetable.rhtml").read, nil, "%"
     
-    @table_rows = DataParser.parse
+    @table_rows = DataParser.new.parse
     
     File.open(@filename, "w") do |file|
       file.write html.result(binding)

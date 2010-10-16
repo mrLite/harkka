@@ -1,7 +1,7 @@
 courses:
     - 
         name: Laskennan mallit
-        lecturer: Joku Heppu
+        lecturer: Timo Soini
         times:
             - 
                 day: mon
@@ -10,7 +10,7 @@ courses:
     
     - 
         name: C-ohjelmointi
-        lecturer: Toinen Heppu
+        lecturer: Kimmo Wilska
         times:
             - 
                 day: tue
@@ -20,3 +20,11 @@ courses:
                 day: thu
                 time: 10-12
                 location: CK112
+    - 
+        name: Algoritmien suunnittelu ja analyysi
+        lecturer: Luis Urzúa
+        times:
+            - 
+                day: fri
+                time: 8-10
+                location: underground
