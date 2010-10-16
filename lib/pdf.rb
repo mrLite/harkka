@@ -4,16 +4,16 @@ require 'prawn/layout'
 require 'data_parser'
 
 class Pdf
-  attr_accessor :filename
+  attr_reader :filename
   def initialize(filename)
     @filename = filename
   end
   
   def produce_pdf
-    table_rows = DataParser.new.parse_for_pdf
+    course_matrix = DataParser.new.parse_for_pdf
     
-    Prawn::Document.generate(filename, :page_size => 'A4', :page_layout => :landscape) do
-      table(table_rows, :cell_style => { :padding => 12 }) do
+    Prawn::Document.generate(@filename, :page_size => 'A4', :page_layout => :landscape) do
+      table(course_matrix, :cell_style => { :padding => 12 }) do
         cells.borders = [:bottom]
 
         # Use the row() and style() methods to select and style a row.
