@@ -14,43 +14,35 @@
 
 		tr {}
 		td {
-			width: 100px;
-			height: 40px;
+			width: 150px;
+			height: 5em;
 			padding: 5px;
 			border: 1px dotted silver;
 			border-top: none; border-left: none;
 		}
-		td.klo { width: 50px; background-color: #DDC; font-weight: bold; border: none; }
+		td.klo { width: 50px; background-color: #DDC; font-weight: bold; border: none; text-align: center; }
 		td.ma { background-color: #ffc7c7; }
 		td.fy { background-color: #c7ffc7; }
 		td.tkt { background-color: #c7c7ff; }
 		td.ma_laskarit { background-color: #ffe9e9; font-size: 0.8em; }
 		td.fy_laskarit { background-color: #e9ffe9; font-size: 0.8em; }
 		td.tkt_laskarit { background-color: #e9e9ff; font-size: 0.8em; }
+		.lecturer { font-size: 0.7em; }
 
 		a, a:visited { text-decoration: none; border-bottom: 2px dotted silver; color: orange;}
 		a:hover { text-decoration: none; border-bottom: 2px dotted gray; }
 
-		#wrapper {
-			width: 600px;
-			margin: 0 auto;
+		#wrapper { 
+			width: 800px;
+			margin: 2em auto;
 			border: 1px solid silver; border-top: none;
 			background-color: #EED;
-		}
-
-		#header {
-			border-bottom: 1px dotted silver;
-			padding: 1em 3em 2em;
 		}
 	</style>
 </head>
 
 <body>
-	<div id="wrapper">
-	<div id="header">
-	<h1>Timetable</h1>
-	</div>
-	
+	<div id="wrapper">	
 	<table>
 		<tr id="1">
 			<td class="klo"></td>
@@ -59,12 +51,17 @@
 			<td class="klo">KE</td>
 			<td class="klo">TO</td>
 			<td class="klo">PE</td>
-		<% (2..11).each do |row| %>
-			<%= "<tr id=\"#{row}\"" %>
-				<%= "<td class=\"klo\">"+(row+6).to_s+"-"+(row+7).to_s+"</td>" %>
-			<% 5.times do %>
-				<%= "<td></td>" %>
-			<% end %>
+		</tr>
+		<% @table_rows.each do |row| %>
+			<tr>
+				<% row.each do |slot| %>
+					<% if slot.class == String %>
+						<td class="klo"><%= slot %></td>
+					<% else %>
+						<td><%= slot[:name] %><br /><%= slot[:location] %><br /><span class="lecturer"><%= slot[:lecturer] %></span></td>
+					<% end %>
+				<% end %>
+			</tr>
 		<% end %>
 	</table>
 	</div>

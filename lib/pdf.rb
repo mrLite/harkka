@@ -1,24 +1,20 @@
 require 'rubygems'
 require 'prawn'
 require 'prawn/layout'
+require 'data_parser'
 
 class Pdf
-  attr_accessor :text, :filename
-  def initialize(text, filename)
-    @text = text
+  attr_accessor :filename
+  def initialize(filename)
     @filename = filename
   end
   
   def produce_pdf
+    table_rows = rows_to_strings(DataParser.parse)
+    table_rows.unshift ["", "MON", "TUE", "WED", "THU", "FRI"]
+    
     Prawn::Document.generate(filename, :page_size => 'A4', :page_layout => :landscape) do
-      table([
-      ["", "MA", "TI", "KE", "TO", "PE"], 
-      ["8-10", "Laskennan mallit", "", "", "C-ohjelmointi", "Tietokoneen toiminta"], 
-      ["10-12", "", "Tietokoneen toiminta", "", "", "Laskennan mallit"],
-      ["12-14"], 
-      ["14-16"],
-      ["16-18"]
-      ], :cell_style => { :padding => 12 }) do
+      table(table_rows, :cell_style => { :padding => 12 }) do
         cells.borders = [:bottom]
 
         # Use the row() and style() methods to select and style a row.
@@ -29,5 +25,26 @@ class Pdf
         style(columns(0..1)) { |cell| cell.borders |= [:right] }
       end
     end
+  end
+  
+  protected
+  
+  def rows_to_strings(matrix)
+    table_matrix = matrix
+    table_matrix = table_matrix.map do |table_row|
+      table_row = table_row.map do |slot|
+        if slot.class == Hash and slot.empty?
+          slot = ""
+        elsif slot.class == Hash and !slot.empty?
+          slot_string = slot[:name].to_s+"\n"
+          slot_string << slot[:location].to_s+"\n"
+          slot_string << slot[:lecturer].to_s
+          slot = slot_string
+        else
+          slot
+        end
+      end
+    end
+    table_matrix
   end
 end

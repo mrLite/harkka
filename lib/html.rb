@@ -1,4 +1,5 @@
 require 'erb'
+require 'data_parser'
 
 class Html
   attr_accessor :filename, :html_file
@@ -8,14 +9,12 @@ class Html
   end
   
   def produce_html
-    html = File.open("../config/timetable.rhtml", "r") do |file|
-      while line = file.gets
-        @html_file << line
-      end
-    end
-  
+    html = ERB.new File.new("../config/timetable.rhtml").read, nil, "%"
+    
+    @table_rows = DataParser.parse
+    
     File.open(@filename, "w") do |file|
-      file.write ERB.new(@html_file).result
+      file.write html.result(binding)
     end
   end
 end

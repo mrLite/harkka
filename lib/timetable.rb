@@ -20,7 +20,7 @@ module TimeTable
     if pdf_filename and pdf_filename != "-html"
       puts "pdf-tiedosto: #{pdf_filename}"
       
-      pdf_file = Pdf.new("PDF-tiedostoon.", pdf_filename)
+      pdf_file = Pdf.new(pdf_filename)
       pdf_file.produce_pdf
     end
   end
