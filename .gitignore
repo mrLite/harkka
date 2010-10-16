@@ -1,3 +1,5 @@
 doc/*.pages
 lib/*.pdf
 lib/*.html
+*.html
+*.pdf
