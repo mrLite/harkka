@@ -1,5 +1,5 @@
-require 'pdf'
-require 'html'
+require "#{File.dirname(__FILE__)}/pdf"
+require "#{File.dirname(__FILE__)}/html"
 
 module TimeTable
   USAGE = "Usage: ruby timetable.rb [-pdf] [filename] [-html] [filename]\n"

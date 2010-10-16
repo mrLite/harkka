@@ -1,10 +1,11 @@
 require 'rubygems'
 require 'prawn'
 require 'prawn/layout'
-require 'data_parser'
+require "#{File.dirname(File.expand_path(__FILE__))}/data_parser"
 
 class Pdf
   attr_reader :filename
+  
   def initialize(filename)
     @filename = filename
   end

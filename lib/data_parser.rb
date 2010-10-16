@@ -3,8 +3,9 @@ require 'yaml'
 class DataParser
   attr_reader :config_type
   attr_accessor :yaml
+  DEFAULT_YAML = "#{File.dirname(File.expand_path(__FILE__))}/../config/timetable.yml"
   
-  def initialize(yaml = "../config/timetable.yml", config_type = "f")
+  def initialize(yaml = DEFAULT_YAML, config_type = "f")
     if config_type == "f"
       @yaml = open(yaml) {|file| YAML.load(file) }
     elsif config_type == "h"
