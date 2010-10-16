@@ -13,7 +13,9 @@ module TimeTable
     
     def run
       if @argv.empty?
-        output_html
+        puts "html-tiedosto: timetable.html"
+        html_file = Html.new
+        html_file.produce_html
       elsif @argv and !@argv.empty?
         unless @argv.include? "-pdf" or @argv.include? "-html"
           puts USAGE
@@ -36,7 +38,6 @@ module TimeTable
           exit(0)
         elsif pdf_filename and pdf_filename != "-html"
           puts "pdf-tiedosto: #{pdf_filename}"
-      
           pdf_file = Pdf.new(pdf_filename)
           pdf_file.produce_pdf
         end
@@ -52,7 +53,6 @@ module TimeTable
           exit(0)
         elsif html_filename and html_filename != "-pdf"
           puts "html-tiedosto: #{html_filename}"
-      
           html_file = Html.new(html_filename)
           html_file.produce_html
         end

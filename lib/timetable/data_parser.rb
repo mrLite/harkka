@@ -16,7 +16,6 @@ module TimeTable
   
     def parse      
       timetable_courses = []
-    
       @yaml['courses'].each do |course|
         course['times'].each do |time|
           timetable_courses << {:name => course['name'], :lecturer => course['lecturer'], :day => time['day'], :time => time['time'], :location => time['location']}
@@ -51,7 +50,11 @@ module TimeTable
       columns = {"mon" => 1, "tue" => 2, "wed" => 3, "thu" => 4, "fri" => 5}
       x = rows[course[:time]]
       y = columns[course[:day]]
-      @timetable_matrix[x][y] = course
+      begin
+        @timetable_matrix[x][y] = course
+      rescue Exception => error
+        puts "ERROR! Ohitettiin kurssi: #{course[:name]} (#{course[:day]}, #{course[:time]}). " + "Tarkista yaml-tiedoston syntaksi."
+      end
     end
   
     def rows_to_strings(matrix)
@@ -72,5 +75,6 @@ module TimeTable
       end
       table_matrix
     end
+    
   end
 end
