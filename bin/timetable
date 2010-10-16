@@ -1,4 +1,5 @@
 #!/usr/bin/ruby
 require 'timetable/runner'
+
 runner = TimeTable::Runner.new(ARGV)
 runner.run

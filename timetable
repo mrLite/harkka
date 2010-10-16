@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec ruby -I lib bin/timetable $1 $2 $3 $4
