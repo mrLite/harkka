@@ -1,0 +1,4 @@
+lib/timetable/data_parser.rb 6dce4c2df33bba0f633e7a71fc3d3d4ceeab3a0d
+lib/timetable/runner.rb 082d745179f84618ca408a88ed8f6766367c9461
+lib/timetable/pdf.rb 6492626391bad6bbc8b11ae6c9c1172900622e7c
+lib/timetable/html.rb ad3170605aa82beb9e9ad57d61e42203d0861c19
