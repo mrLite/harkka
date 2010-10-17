@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Content-Type" content="text/html; charset=utf-8" />
+<title>Class: TimeTable::Pdf</title>
+<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '..';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (P)</a> &raquo; 
+    <span class='title'><span class='object_link'><a href="../TimeTable.html" title="TimeTable (module)">TimeTable</a></span></span>
+     &raquo; 
+    <span class="title">Pdf</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: TimeTable::Pdf
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">TimeTable::Pdf</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/timetable/pdf.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="HEADERS-constant" class="">HEADERS =
+          
+        </dt>
+        <dd><pre class="code"><span class='lbrack token'>[</span><span class='string val'>&quot;&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;MA&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;TI&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;KE&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;TO&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;PE&quot;</span><span class='rbrack token'>]</span>
+</pre></dd>
+      
+    </dl>
+  
+
+
+  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#filename-instance_method" title="#filename (instance method)">- (Object) <strong>filename</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title readonly">readonly</span>
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Returns the value of attribute filename.
+</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Pdf) <strong>initialize</strong>(filename) </a>
+    
+
+    
+  </span>
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+A new instance of Pdf.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#produce_pdf-instance_method" title="#produce_pdf (instance method)">- (Object) <strong>produce_pdf</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <p class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="TimeTable::Pdf (class)">Pdf</a></span></tt>) <strong>initialize</strong>(filename) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+A new instance of Pdf
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+11
+12
+13</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/timetable/pdf.rb', line 11</span>
+
+<span class='def def kw'>def</span> <span class='initialize identifier id'>initialize</span><span class='lparen token'>(</span><span class='filename identifier id'>filename</span><span class='rparen token'>)</span>
+  <span class='@filename ivar id'>@filename</span> <span class='assign token'>=</span> <span class='filename identifier id'>filename</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id=""></span>
+      <span id="filename-instance_method"></span>
+      <div class="method_details first">
+  <p class="signature first" id="filename-instance_method">
+  
+    - (<tt>Object</tt>) <strong>filename</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the value of attribute filename
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+9
+10
+11</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/timetable/pdf.rb', line 9</span>
+
+<span class='def def kw'>def</span> <span class='filename identifier id'>filename</span>
+  <span class='@filename ivar id'>@filename</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="produce_pdf-instance_method">
+  
+    - (<tt>Object</tt>) <strong>produce_pdf</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/timetable/pdf.rb', line 15</span>
+
+<span class='def def kw'>def</span> <span class='produce_pdf identifier id'>produce_pdf</span>
+  <span class='course_matrix identifier id'>course_matrix</span> <span class='assign token'>=</span> <span class='DataParser constant id'>DataParser</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='dot token'>.</span><span class='parse_for_pdf identifier id'>parse_for_pdf</span>
+  
+  <span class='Prawn constant id'>Prawn</span><span class='colon2 op'>::</span><span class='Document constant id'>Document</span><span class='dot token'>.</span><span class='generate identifier id'>generate</span><span class='lparen token'>(</span><span class='@filename ivar id'>@filename</span><span class='comma token'>,</span> <span class='symbol val'>:page_size</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'A4'</span><span class='comma token'>,</span> <span class='symbol val'>:page_layout</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:landscape</span><span class='rparen token'>)</span> <span class='do do kw'>do</span>
+    <span class='table identifier id'>table</span> <span class='course_matrix identifier id'>course_matrix</span><span class='comma token'>,</span>
+    <span class='symbol val'>:headers</span>        <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='HEADERS constant id'>HEADERS</span><span class='comma token'>,</span>
+    <span class='symbol val'>:border_style</span>   <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:grid</span><span class='comma token'>,</span>
+    <span class='symbol val'>:row_colors</span>     <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='string val'>'dddddd'</span><span class='comma token'>,</span> <span class='string val'>'eeeeee'</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+    <span class='symbol val'>:column_widths</span>  <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrace token'>{</span><span class='integer val'>0</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>45</span><span class='comma token'>,</span> <span class='integer val'>1</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>145</span><span class='comma token'>,</span> <span class='integer val'>2</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>145</span><span class='comma token'>,</span> <span class='integer val'>3</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>145</span><span class='comma token'>,</span> <span class='integer val'>4</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>145</span><span class='comma token'>,</span> <span class='integer val'>5</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>145</span><span class='rbrace token'>}</span> <span class='do do kw'>do</span>
+      <span class='row identifier id'>row</span><span class='lparen token'>(</span><span class='integer val'>0</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='style identifier id'>style</span><span class='lparen token'>(</span><span class='symbol val'>:background_color</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'cccccc'</span><span class='rparen token'>)</span>
+      <span class='column identifier id'>column</span><span class='lparen token'>(</span><span class='integer val'>0</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='style identifier id'>style</span><span class='lparen token'>(</span><span class='symbol val'>:background_color</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'cccccc'</span><span class='rparen token'>)</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Sun Oct 17 18:31:02 2010 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.6.1 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>

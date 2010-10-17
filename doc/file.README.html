@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Content-Type" content="text/html; charset=utf-8" />
+<title>Documentation by YARD 0.6.1</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html" title="Index">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><div id='filecontents'><p>
+Lukujärjestystyökalu lukee luentojen ja harjoitusryhmien tiedot ja
+tuottaa käyttäjän antamien parametrien mukaan pdf- ja/tai html-muotoisen
+tiedoston, jonka sisältönä on viikkokohtainen lukujärjestys
+havainnollisena matriisina, jonka rivit kuvaavat kellonaikoja ja sarakkeet
+viikonpäiviä. Ohjelman tarkoitettu käyttäjäsegmentti on
+yliopisto-opiskelijat.
+</p>
+<p>
+Ohjelmaa käytetään komentoriviltä, mutta varsinaista interaktiivista
+käyttöliittymää ei ole, sillä luento- ja harjoitusryhmätiedot
+(kurssin nimi, luento vai laskuharjoitus, aika ja paikka) luetaan
+erillisestä, ohjelman käyttäjän muokattavissa olevasta YAML-muotoisesta
+konfiguraatiotiedostosta. Tuloksena saatavan html-tiedoston
+CSS-tyylitiedosto on niin ikään ohjelman käyttäjän kustomoitavissa,
+mutta pdf-tiedoston ulkoasu ei luultavasti tule olemaan muokattavissa.
+</p>
+<p>
+Ohjelmaa ajettaessa käyttäjä voi määritellä komentoriviparametreina
+haluamansa tiedostoformaatit (-pdf ja -html, html vakiona jos parametreja
+ei annettu) ja tuotettavien tiedostojen nimet (tiedostonimissäkin vakiot,
+ellei parametreja annettu).
+</p>
+<p>
+Ohjelma varautuu virheellisiin syöttöihin sekä komentoriviparametreissa,
+että konfiguraatiotiedostossa. Esimerkiksi jos käyttäjä yrittää ajaa
+ohjelmaa parametrilla ’-pfd’, ohjelma tulostaa käyttöohjeet, tai jos
+konfiguraatiossa on määritelty luento alkamaan loppumisajan jälkeen,
+jätetään kyseinen kohta huomiotta ja tulostetaan käyttäjälle
+huomautus.
+</p>
+</div></div>
+    
+    <div id="footer">
+  Generated on Sun Oct 17 18:31:02 2010 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.6.1 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>

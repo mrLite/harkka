@@ -1,0 +1,500 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Content-Type" content="text/html; charset=utf-8" />
+<title>Class: TimeTable::DataParser</title>
+<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '..';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (D)</a> &raquo; 
+    <span class='title'><span class='object_link'><a href="../TimeTable.html" title="TimeTable (module)">TimeTable</a></span></span>
+     &raquo; 
+    <span class="title">DataParser</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: TimeTable::DataParser
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">TimeTable::DataParser</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/timetable/data_parser.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="DEFAULT_YAML-constant" class="">DEFAULT_YAML =
+          
+        </dt>
+        <dd><pre class="code"><span class='dstring node'>&quot;#{File.dirname(File.expand_path(__FILE__))}/../../config/timetable.yml&quot;</span>
+</pre></dd>
+      
+    </dl>
+  
+
+
+  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#config_type-instance_method" title="#config_type (instance method)">- (Object) <strong>config_type</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title readonly">readonly</span>
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Returns the value of attribute config_type.
+</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#yaml-instance_method" title="#yaml (instance method)">- (Object) <strong>yaml</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Returns the value of attribute yaml.
+</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (DataParser) <strong>initialize</strong>(yaml = DEFAULT_YAML, config_type = &quot;f&quot;) </a>
+    
+
+    
+  </span>
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+A new instance of DataParser.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#parse-instance_method" title="#parse (instance method)">- (Object) <strong>parse</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#parse_for_pdf-instance_method" title="#parse_for_pdf (instance method)">- (Object) <strong>parse_for_pdf</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <p class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="TimeTable::DataParser (class)">DataParser</a></span></tt>) <strong>initialize</strong>(yaml = DEFAULT_YAML, config_type = &quot;f&quot;) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+A new instance of DataParser
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+9
+10
+11
+12
+13
+14
+15</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/timetable/data_parser.rb', line 9</span>
+
+<span class='def def kw'>def</span> <span class='initialize identifier id'>initialize</span><span class='lparen token'>(</span><span class='yaml identifier id'>yaml</span> <span class='assign token'>=</span> <span class='DEFAULT_YAML constant id'>DEFAULT_YAML</span><span class='comma token'>,</span> <span class='config_type identifier id'>config_type</span> <span class='assign token'>=</span> <span class='string val'>&quot;f&quot;</span><span class='rparen token'>)</span>
+  <span class='if if kw'>if</span> <span class='config_type identifier id'>config_type</span> <span class='eq op'>==</span> <span class='string val'>&quot;f&quot;</span>
+    <span class='@yaml ivar id'>@yaml</span> <span class='assign token'>=</span> <span class='open identifier id'>open</span><span class='lparen token'>(</span><span class='yaml identifier id'>yaml</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span><span class='bitor op'>|</span><span class='file identifier id'>file</span><span class='bitor op'>|</span> <span class='YAML constant id'>YAML</span><span class='dot token'>.</span><span class='load identifier id'>load</span><span class='lparen token'>(</span><span class='file identifier id'>file</span><span class='rparen token'>)</span> <span class='rbrace token'>}</span>
+  <span class='elsif elsif kw'>elsif</span> <span class='config_type identifier id'>config_type</span> <span class='eq op'>==</span> <span class='string val'>&quot;h&quot;</span>
+    <span class='@yaml ivar id'>@yaml</span> <span class='assign token'>=</span> <span class='yaml identifier id'>yaml</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id=""></span>
+      <span id="config_type-instance_method"></span>
+      <div class="method_details first">
+  <p class="signature first" id="config_type-instance_method">
+  
+    - (<tt>Object</tt>) <strong>config_type</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the value of attribute config_type
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+5
+6
+7</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/timetable/data_parser.rb', line 5</span>
+
+<span class='def def kw'>def</span> <span class='config_type identifier id'>config_type</span>
+  <span class='@config_type ivar id'>@config_type</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="yaml=-instance_method"></span>
+      <span id="yaml-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="yaml-instance_method">
+  
+    - (<tt>Object</tt>) <strong>yaml</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the value of attribute yaml
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+6
+7
+8</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/timetable/data_parser.rb', line 6</span>
+
+<span class='def def kw'>def</span> <span class='yaml identifier id'>yaml</span>
+  <span class='@yaml ivar id'>@yaml</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="parse-instance_method">
+  
+    - (<tt>Object</tt>) <strong>parse</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/timetable/data_parser.rb', line 17</span>
+
+<span class='def def kw'>def</span> <span class='parse identifier id'>parse</span>      
+  <span class='timetable_courses identifier id'>timetable_courses</span> <span class='assign token'>=</span> <span class='lbrack token'>[</span><span class='rbrack token'>]</span>
+  <span class='@yaml ivar id'>@yaml</span><span class='lbrack token'>[</span><span class='string val'>'courses'</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='course identifier id'>course</span><span class='bitor op'>|</span>
+    <span class='course identifier id'>course</span><span class='lbrack token'>[</span><span class='string val'>'times'</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='time identifier id'>time</span><span class='bitor op'>|</span>
+      <span class='timetable_courses identifier id'>timetable_courses</span> <span class='lshft op'>&lt;&lt;</span> <span class='lbrace token'>{</span><span class='symbol val'>:name</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='course identifier id'>course</span><span class='lbrack token'>[</span><span class='string val'>'name'</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='symbol val'>:lecturer</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='course identifier id'>course</span><span class='lbrack token'>[</span><span class='string val'>'lecturer'</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='symbol val'>:type</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='course identifier id'>course</span><span class='lbrack token'>[</span><span class='string val'>'type'</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='symbol val'>:day</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='time identifier id'>time</span><span class='lbrack token'>[</span><span class='string val'>'day'</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='symbol val'>:time</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='time identifier id'>time</span><span class='lbrack token'>[</span><span class='string val'>'time'</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='symbol val'>:location</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='time identifier id'>time</span><span class='lbrack token'>[</span><span class='string val'>'location'</span><span class='rbrack token'>]</span><span class='rbrace token'>}</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+
+  <span class='@timetable_matrix ivar id'>@timetable_matrix</span> <span class='assign token'>=</span> <span class='lbrack token'>[</span>
+    <span class='lbrack token'>[</span><span class='string val'>&quot;8-10&quot;</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+    <span class='lbrack token'>[</span><span class='string val'>&quot;10-12&quot;</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+    <span class='lbrack token'>[</span><span class='string val'>&quot;12-14&quot;</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+    <span class='lbrack token'>[</span><span class='string val'>&quot;14-16&quot;</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+    <span class='lbrack token'>[</span><span class='string val'>&quot;16-18&quot;</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+    <span class='lbrack token'>[</span><span class='string val'>&quot;18-20&quot;</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rbrack token'>]</span>
+    <span class='rbrack token'>]</span>
+
+  <span class='timetable_courses identifier id'>timetable_courses</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='row identifier id'>row</span><span class='bitor op'>|</span>
+    <span class='begin begin kw'>begin</span>
+      <span class='index_on_matrix identifier id'>index_on_matrix</span> <span class='row identifier id'>row</span>
+    <span class='rescue rescue kw'>rescue</span> <span class='Exception constant id'>Exception</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='e identifier id'>e</span>
+      <span class='STDERR constant id'>STDERR</span><span class='dot token'>.</span><span class='puts identifier id'>puts</span> <span class='dstring node'>&quot;ERROR! Ohitettiin kurssi: #{course[:name]} (#{course[:day]} #{course[:time]}). &quot;</span> <span class='plus op'>+</span> <span class='string val'>&quot;Tarkista yaml-tiedoston syntaksi.&quot;</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+<span class='return return kw'>return</span> <span class='@timetable_matrix ivar id'>@timetable_matrix</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="parse_for_pdf-instance_method">
+  
+    - (<tt>Object</tt>) <strong>parse_for_pdf</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+44
+45
+46</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/timetable/data_parser.rb', line 44</span>
+
+<span class='def def kw'>def</span> <span class='parse_for_pdf identifier id'>parse_for_pdf</span>
+  <span class='table_rows identifier id'>table_rows</span> <span class='assign token'>=</span> <span class='rows_to_strings identifier id'>rows_to_strings</span><span class='lparen token'>(</span><span class='self self kw'>self</span><span class='dot token'>.</span><span class='parse identifier id'>parse</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Sun Oct 17 18:31:02 2010 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.6.1 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>
