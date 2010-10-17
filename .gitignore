@@ -1,5 +1,5 @@
 doc/*.pages
-lib/*.pdf
-lib/*.html
+lib/timetable/*.pdf
+lib/timetable/*.html
 ./*.html
 ./*.pdf
