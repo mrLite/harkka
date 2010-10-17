@@ -2,6 +2,7 @@ courses:
     - 
         name: Laskennan mallit
         lecturer: Timo Soini
+        type: LU
         times:
             - 
                 day: mon
@@ -9,8 +10,19 @@ courses:
                 location: A111
     
     - 
+        name: Laskennan mallit
+        lecturer: Jussi Allah-aho
+        type: LH
+        times:
+            - 
+                day: wed
+                time: 16-18
+                location: Eira
+                
+    - 
         name: C-ohjelmointi
         lecturer: Kimmo Wilska
+        type: LU
         times:
             - 
                 day: tue
@@ -20,9 +32,11 @@ courses:
                 day: thu
                 time: 10-12
                 location: CK112
+                
     - 
         name: Algoritmien suunnittelu ja analyysi
         lecturer: Luis Urzúa
+        type: LU
         times:
             - 
                 day: fri

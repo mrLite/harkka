@@ -18,7 +18,7 @@ module TimeTable
       timetable_courses = []
       @yaml['courses'].each do |course|
         course['times'].each do |time|
-          timetable_courses << {:name => course['name'], :lecturer => course['lecturer'], :day => time['day'], :time => time['time'], :location => time['location']}
+          timetable_courses << {:name => course['name'], :lecturer => course['lecturer'], :type => course['type'], :day => time['day'], :time => time['time'], :location => time['location']}
         end
       end
     
@@ -32,15 +32,17 @@ module TimeTable
         ]
     
       timetable_courses.each do |row|
-        index_on_matrix row
+        begin
+          index_on_matrix row
+        rescue Exception => e
+          STDERR.puts "ERROR! Ohitettiin kurssi: #{course[:name]} (#{course[:day]} #{course[:time]}). " + "Tarkista yaml-tiedoston syntaksi."
+        end
       end
     return @timetable_matrix
     end
   
     def parse_for_pdf
       table_rows = rows_to_strings(self.parse)
-      table_rows.unshift ["", "MON", "TUE", "WED", "THU", "FRI"]
-      table_rows
     end
   
     private
@@ -50,11 +52,7 @@ module TimeTable
       columns = {"mon" => 1, "tue" => 2, "wed" => 3, "thu" => 4, "fri" => 5}
       x = rows[course[:time]]
       y = columns[course[:day]]
-      begin
-        @timetable_matrix[x][y] = course
-      rescue Exception => error
-        puts "ERROR! Ohitettiin kurssi: #{course[:name]} (#{course[:day]}, #{course[:time]}). " + "Tarkista yaml-tiedoston syntaksi."
-      end
+      @timetable_matrix[x][y] = course
     end
   
     def rows_to_strings(matrix)
@@ -64,7 +62,7 @@ module TimeTable
           if slot.class == Hash and slot.empty?
             slot = ""
           elsif slot.class == Hash and !slot.empty?
-            slot_string = slot[:name].to_s+"\n"
+            slot_string = slot[:name].to_s+" ("+slot[:type]+")"+"\n"
             slot_string << slot[:location].to_s+"\n"
             slot_string << slot[:lecturer].to_s
             slot = slot_string
