@@ -21,13 +21,10 @@
 			border-top: none; border-left: none;
 		}
 		td.klo { width: 50px; background-color: #DDC; font-weight: bold; border: none; text-align: center; }
-		td.ma { background-color: #ffc7c7; }
-		td.fy { background-color: #c7ffc7; }
-		td.tkt { background-color: #c7c7ff; }
-		td.ma_laskarit { background-color: #ffe9e9; font-size: 0.8em; }
-		td.fy_laskarit { background-color: #e9ffe9; font-size: 0.8em; }
-		td.tkt_laskarit { background-color: #e9e9ff; font-size: 0.8em; }
+		.LU { background-color: #ffc7c7; }
+		.LH { background-color: #ffe9e9; }
 		.lecturer { font-size: 0.7em; }
+		.insignia { font-size: 2em; text-align: center; margin-top: 60px;}
 
 		a, a:visited { text-decoration: none; border-bottom: 2px dotted silver; color: orange;}
 		a:hover { text-decoration: none; border-bottom: 2px dotted gray; }
@@ -57,13 +54,16 @@
 				<% row.each do |slot| %>
 					<% if slot.class == String %>
 						<td class="klo"><%= slot %></td>
+					<% elsif slot.class == Hash and !slot.empty? %>
+						<%= "<td class=\""+slot[:type]+"\">" %><%= slot[:name] %><br /><%= slot[:location] %><br /><span class="lecturer"><%= slot[:lecturer] %></span></td>
 					<% else %>
-						<td><%= slot[:name] %><br /><%= slot[:location] %><br /><span class="lecturer"><%= slot[:lecturer] %></span></td>
+						<td></td>
 					<% end %>
 				<% end %>
 			</tr>
 		<% end %>
 	</table>
 	</div>
+	<p class="insignia"><span class="LU">Luento</span> <span class="LH">Laskuharjoitus</span></p>
 </body>
 </html>
