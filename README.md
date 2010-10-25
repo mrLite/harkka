@@ -49,7 +49,7 @@ Pakollisia tietoja ovat ‘day’ ja ‘time’, muut kohdat ovat valinnaisia.
 * Name: kurssin nimi
 * Lecturer: kurssin luennoija/laskuharjoituksen pitäjä
 * Type: LU (luento) tai LH (laskuharjoitus)
-** Times: **
+* ** Times: **
 * Day: viikonpäivä (mon, tue, wed, thu tai fri)
 * Time: kellonaika (8-10, 10-12, 12-14, 14-16, 16-18 tai 18-20)
 * Location: luennon/laskuharjoituksen sijainti
