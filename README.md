@@ -1,0 +1,56 @@
+# Lukujärjestystyökalu
+
+Lukujärjestystyökalu lukee luentojen ja harjoitusryhmien tiedot ja tuottaa käyttäjän antamien parametrien mukaan pdf- ja/tai html-muotoisen tiedoston, jonka sisältönä on viikkokohtainen lukujärjestys havainnollisena matriisina, jonka rivit kuvaavat kellonaikoja ja sarakkeet viikonpäiviä. Ohjelman tarkoitettu käyttäjäsegmentti on yliopisto-opiskelijat.
+
+Ohjelmaa käytetään komentoriviltä, mutta varsinaista interaktiivista käyttöliittymää ei ole, sillä luento- ja harjoitusryhmätiedot (kurssin nimi, luento vai laskuharjoitus, aika ja paikka) luetaan erillisestä, ohjelman käyttäjän muokattavissa olevasta YAML-muotoisesta konfiguraatiotiedostosta. Tuloksena saatavan html-tiedoston CSS-tyylitiedosto on niin ikään ohjelman käyttäjän kustomoitavissa, mutta pdf-tiedoston ulkoasu ei ole muokattavissa.
+
+Ohjelma varautuu virheellisiin syöttöihin sekä komentoriviparametreissa, että konfiguraatiotiedostossa. Esimerkiksi jos käyttäjä yrittää ajaa ohjelmaa parametrilla ’-pfd’, ohjelma tulostaa käyttöohjeet, tai jos konfiguraatiossa on määritelty luento alkamaan loppumisajan jälkeen, jätetään kyseinen kohta huomiotta ja tulostetaan käyttäjälle huomautus.
+
+## Käyttöohje
+
+Ohjelma ajetaan komentoriviltä seuraavalla tavalla:
+	./timetable [valinnat]
+		-h, --help, --usage		Tulostaa ohjelman käyttöohjeet.
+		-html tiedostonimi		Html-muotoinen tulostiedosto tiedostonimellä.
+		-pdf tiedostonimi		Pdf-muotoinen tulostiedosto tiedostonimellä.
+
+Ilman valintoja ohjelma tulostaa html-muotoisen tiedoston nimellä timetable.html.
+
+Ohjelma lukee luentojen ja laskuharjoitusten tiedot config/timetable.yml-tiedostosta. Kurssien muoto tulee noudattaa seuraavaa esimerkkiä:
+
+	courses:
+	    - 
+	        name: Laskennan mallit
+	        lecturer: Timo Soini
+	        type: LU
+	        times:
+	            - 
+	                day: mon
+	                time: 12-14
+	                location: A111
+	            - 
+	                day: thu
+	                time: 14-16
+	                location: A111
+
+    
+	    - 
+	        name: Laskennan mallit
+	        lecturer: Jussi Allah-aho
+	        type: LH
+	        times:
+	            - 
+	                day: wed
+	                time: 16-18
+	                location: Eira
+
+
+Name: kurssin nimi
+Lecturer: kurssin luennoija/laskuharjoituksen pitäjä
+Type: LU (luento) tai LH (laskuharjoitus)
+Times:
+	Day: viikonpäivä (mon, tue, wed, thu tai fri)
+	Time: kellonaika (8-10, 10-12, 12-14, 14-16, 16-18 tai 18-20)
+	Location: luennon/laskuharjoituksen sijainti
+
+Pakollisia tietoja ovat ‘day’ ja ‘time’, muut kohdat ovat valinnaisia.
