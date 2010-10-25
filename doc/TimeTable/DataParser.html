@@ -204,7 +204,11 @@ A new instance of DataParser.
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'><p>
+Muodostetaan 6x6-matriisi @yaml-muuttujaan asetetusta yaml-hashista, jossa
+sarakkeet edustavat viikonpäiviä ja rivit kellonaikoja.
+</p>
+</div></span>
   
 </li>
 
@@ -225,7 +229,10 @@ A new instance of DataParser.
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'><p>
+Parsitaan matriisi pdf-tiedostoa varten.
+</p>
+</div></span>
   
 </li>
 
@@ -389,13 +396,24 @@ Returns the value of attribute yaml
   
 
   
-</p><table class="source_code">
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Muodostetaan 6x6-matriisi @yaml-muuttujaan asetetusta yaml-hashista, jossa
+sarakkeet edustavat viikonpäiviä ja rivit kellonaikoja.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-17
 18
 19
 20
@@ -420,10 +438,11 @@ Returns the value of attribute yaml
 39
 40
 41
-42</pre>
+42
+43</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/timetable/data_parser.rb', line 17</span>
+      <pre class="code"><span class="info file"># File 'lib/timetable/data_parser.rb', line 18</span>
 
 <span class='def def kw'>def</span> <span class='parse identifier id'>parse</span>      
   <span class='timetable_courses identifier id'>timetable_courses</span> <span class='assign token'>=</span> <span class='lbrack token'>[</span><span class='rbrack token'>]</span>
@@ -464,18 +483,29 @@ Returns the value of attribute yaml
   
 
   
-</p><table class="source_code">
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Parsitaan matriisi pdf-tiedostoa varten.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-44
-45
-46</pre>
+46
+47
+48</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/timetable/data_parser.rb', line 44</span>
+      <pre class="code"><span class="info file"># File 'lib/timetable/data_parser.rb', line 46</span>
 
 <span class='def def kw'>def</span> <span class='parse_for_pdf identifier id'>parse_for_pdf</span>
   <span class='table_rows identifier id'>table_rows</span> <span class='assign token'>=</span> <span class='rows_to_strings identifier id'>rows_to_strings</span><span class='lparen token'>(</span><span class='self self kw'>self</span><span class='dot token'>.</span><span class='parse identifier id'>parse</span><span class='rparen token'>)</span>
@@ -491,7 +521,7 @@ Returns the value of attribute yaml
 </div>
     
     <div id="footer">
-  Generated on Sun Oct 17 18:31:02 2010 by 
+  Generated on Mon Oct 18 18:47:52 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.6.1 (ruby-1.8.7).
 </div>

@@ -1,5 +1,5 @@
-require "#{File.dirname(__FILE__)}/pdf"
-require "#{File.dirname(__FILE__)}/html"
+require "#{File.dirname(File.expand_path(__FILE__))}/pdf"
+require "#{File.dirname(File.expand_path(__FILE__))}/html"
 
 module TimeTable
   class Runner
@@ -16,6 +16,9 @@ module TimeTable
         puts "html-tiedosto: timetable.html"
         html_file = Html.new
         html_file.produce_html
+      elsif @argv and @argv.include? "-h"
+        puts USAGE
+        Kernel.exit
       elsif @argv and !@argv.empty?
         unless @argv.include? "-pdf" or @argv.include? "-html"
           puts USAGE
