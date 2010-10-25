@@ -5,3 +5,53 @@ Ohjelmaa käytetään komentoriviltä, mutta varsinaista interaktiivista käytt�
 Ohjelmaa ajettaessa käyttäjä voi määritellä komentoriviparametreina haluamansa tiedostoformaatit (-pdf ja -html, html vakiona jos parametreja ei annettu) ja tuotettavien tiedostojen nimet (tiedostonimissäkin vakiot, ellei parametreja annettu).
 
 Ohjelma varautuu virheellisiin syöttöihin sekä komentoriviparametreissa, että konfiguraatiotiedostossa. Esimerkiksi jos käyttäjä yrittää ajaa ohjelmaa parametrilla ’-pfd’, ohjelma tulostaa käyttöohjeet, tai jos konfiguraatiossa on määritelty luento alkamaan loppumisajan jälkeen, jätetään kyseinen kohta huomiotta ja tulostetaan käyttäjälle huomautus.
+
+
+Käyttöohje
+
+Ohjelma ajetaan komentoriviltä seuraavalla tavalla:
+./timetable [valinnat]
+	-h, --help, --usage		Tulostaa ohjelman käyttöohjeet.
+	-html <tiedostonimi>		Html-muotoinen tulostiedosto tiedostonimellä.
+	-pdf <tiedostonimi>		Pdf-muotoinen tulostiedosto tiedostonimellä.
+
+Ilman valintoja ohjelma tulostaa html-muotoisen tiedoston nimellä timetable.html.
+
+Ohjelma lukee luentojen ja laskuharjoitusten tiedot config/timetable.yml-tiedostosta. Kurssien muoto tulee noudattaa seuraavaa esimerkkiä:
+
+courses:
+    - 
+        name: Laskennan mallit
+        lecturer: Timo Soini
+        type: LU
+        times:
+            - 
+                day: mon
+                time: 12-14
+                location: A111
+            - 
+                day: thu
+                time: 14-16
+                location: A111
+
+    
+    - 
+        name: Laskennan mallit
+        lecturer: Jussi Allah-aho
+        type: LH
+        times:
+            - 
+                day: wed
+                time: 16-18
+                location: Eira
+
+
+Name: kurssin nimi
+Lecturer: kurssin luennoija/laskuharjoituksen pitäjä
+Type: LU (luento) tai LH (laskuharjoitus)
+Times:
+	Day: viikonpäivä (mon, tue, wed, thu tai fri)
+	Time: kellonaika (8-10, 10-12, 12-14, 14-16, 16-18 tai 18-20)
+	Location: luennon/laskuharjoituksen sijainti
+
+Pakollisia tietoja ovat ‘day’ ja ‘time’, muut kohdat ovat valinnaisia.
