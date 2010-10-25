@@ -3,8 +3,7 @@ require 'yaml'
 
 describe TimeTable::DataParser do
   it "should load courses from the default yaml file" do
-    test_yaml = open("config/timetable.yml") {|file| YAML.load(file) }
-    #test_yaml = {"courses"=>[{"name"=>"Laskennan mallit", "times"=>[{"location"=>"A111", "time"=>"12-14", "day"=>"mon"}], "type"=>"LU", "lecturer"=>"Timo Soini"}, {"name"=>"Laskennan mallit", "times"=>[{"location"=>"Eira", "time"=>"16-18", "day"=>"wed"}], "type"=>"LH", "lecturer"=>"Jussi Allah-aho"}, {"name"=>"C-ohjelmointi", "times"=>[{"location"=>"CK112", "time"=>"14-16", "day"=>"tue"}, {"location"=>"CK112", "time"=>"10-12", "day"=>"thu"}], "type"=>"LU", "lecturer"=>"Kimmo Wilska"}, {"name"=>"Algoritmien suunnittelu ja analyysi", "times"=>[{"location"=>"underground", "time"=>"8-10", "day"=>"fri"}], "type"=>"LU", "lecturer"=>"Luis Urzua"}]}
+    test_yaml = open("#{File.dirname(File.expand_path(__FILE__))}/../config/timetable.yml") {|file| YAML.load(file) }
     data_parser = TimeTable::DataParser.new
     data_parser.yaml.should == test_yaml
   end
