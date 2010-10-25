@@ -45,12 +45,12 @@ Ohjelma lukee luentojen ja laskuharjoitusten tiedot config/timetable.yml-tiedost
 	                location: Eira
 
 
-Name: kurssin nimi
-Lecturer: kurssin luennoija/laskuharjoituksen pitäjä
-Type: LU (luento) tai LH (laskuharjoitus)
-Times:
-	Day: viikonpäivä (mon, tue, wed, thu tai fri)
-	Time: kellonaika (8-10, 10-12, 12-14, 14-16, 16-18 tai 18-20)
-	Location: luennon/laskuharjoituksen sijainti
+	name: kurssin nimi
+	lecturer: kurssin luennoija/laskuharjoituksen pitäjä
+	type: LU (luento) tai LH (laskuharjoitus)
+	times:
+		day: viikonpäivä (mon, tue, wed, thu tai fri)
+		time: kellonaika (8-10, 10-12, 12-14, 14-16, 16-18 tai 18-20)
+		location: luennon/laskuharjoituksen sijainti
 
 Pakollisia tietoja ovat ‘day’ ja ‘time’, muut kohdat ovat valinnaisia.
