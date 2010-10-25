@@ -3,7 +3,7 @@ require "#{File.dirname(File.expand_path(__FILE__))}/html"
 
 module TimeTable
   class Runner
-    USAGE = "Usage: ./timetable [-pdf] [filename] [-html] [filename]\n"
+    USAGE = "Usage: ./timetable [-pdf filename] [-html filename]\n"
     USAGE << "Default output is a html file, and if no filename is given it's timetable.html"
     attr_reader :argv
     
@@ -16,7 +16,7 @@ module TimeTable
         puts "html-tiedosto: timetable.html"
         html_file = Html.new
         html_file.produce_html
-      elsif @argv and @argv.include? "-h"
+      elsif @argv and @argv.include? "-h" or @argv.include? "--help" or @argv.include? "--usage"
         puts USAGE
         Kernel.exit
       elsif @argv and !@argv.empty?
