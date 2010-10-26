@@ -17,12 +17,10 @@ module TimeTable
         html_file = Html.new
         html_file.produce_html
       elsif @argv and @argv.include? "-h" or @argv.include? "--help" or @argv.include? "--usage"
-        puts USAGE
-        Kernel.exit
+        abort(USAGE)
       elsif @argv and !@argv.empty?
         unless @argv.include? "-pdf" or @argv.include? "-html"
-          puts USAGE
-          Kernel.exit
+          abort(USAGE)
         else
           output_html
           output_pdf
