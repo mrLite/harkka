@@ -1,4 +1,4 @@
-# Lukujärjestystyökalu
+Lukujärjestystyökalu
 
 Lukujärjestystyökalu lukee luentojen ja harjoitusryhmien tiedot ja tuottaa käyttäjän antamien parametrien mukaan pdf- ja/tai html-muotoisen tiedoston, jonka sisältönä on viikkokohtainen lukujärjestys havainnollisena matriisina, jonka rivit kuvaavat kellonaikoja ja sarakkeet viikonpäiviä. Ohjelman tarkoitettu käyttäjäsegmentti on yliopisto-opiskelijat.
 
@@ -6,11 +6,7 @@ Ohjelmaa käytetään komentoriviltä, mutta varsinaista interaktiivista käytt�
 
 Ohjelma varautuu virheellisiin syöttöihin sekä komentoriviparametreissa, että konfiguraatiotiedostossa. Esimerkiksi jos käyttäjä yrittää ajaa ohjelmaa parametrilla ’-pfd’, ohjelma tulostaa käyttöohjeet, tai jos konfiguraatiossa on määritelty luento alkamaan loppumisajan jälkeen, jätetään kyseinen kohta huomiotta ja tulostetaan käyttäjälle huomautus.
 
-## Dokumentaatio
-
-Ohjelman YARDoc-muotoinen dokumentaatio löytyy osoitteesta http://aq.nerds.fi/harkka/doc/
-
-## Käyttöohje
+Käyttöohje
 
 Ohjelma ajetaan komentoriviltä seuraavalla tavalla:
 	./timetable [valinnat]
@@ -50,11 +46,11 @@ Ohjelma lukee luentojen ja laskuharjoitusten tiedot config/timetable.yml-tiedost
 
 Pakollisia tietoja ovat ‘day’ ja ‘time’, muut kohdat ovat valinnaisia.
 
-* Name: kurssin nimi
-* Lecturer: kurssin luennoija/laskuharjoituksen pitäjä
-* Type: LU (luento) tai LH (laskuharjoitus)
-* ** Times: **
-* Day: viikonpäivä (mon, tue, wed, thu tai fri)
-* Time: kellonaika (8-10, 10-12, 12-14, 14-16, 16-18 tai 18-20)
-* Location: luennon/laskuharjoituksen sijainti
+Name: kurssin nimi
+Lecturer: kurssin luennoija/laskuharjoituksen pitäjä
+Type: LU (luento) tai LH (laskuharjoitus)
+Times:
+	Day: viikonpäivä (mon, tue, wed, thu tai fri)
+	Time: kellonaika (8-10, 10-12, 12-14, 14-16, 16-18 tai 18-20)
+	Location: luennon/laskuharjoituksen sijainti
 

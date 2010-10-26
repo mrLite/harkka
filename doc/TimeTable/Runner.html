@@ -87,7 +87,7 @@
         <dt id="USAGE-constant" class="">USAGE =
           
         </dt>
-        <dd><pre class="code"><span class='string val'>&quot;Usage: ./timetable [-pdf] [filename] [-html] [filename]\n&quot;</span>
+        <dd><pre class="code"><span class='string val'>&quot;Usage: ./timetable [-pdf filename] [-html filename]\n&quot;</span>
 </pre></dd>
       
     </dl>
@@ -311,9 +311,7 @@ Returns the value of attribute argv
 26
 27
 28
-29
-30
-31</pre>
+29</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/timetable/runner.rb', line 14</span>
@@ -323,13 +321,11 @@ Returns the value of attribute argv
     <span class='puts identifier id'>puts</span> <span class='string val'>&quot;html-tiedosto: timetable.html&quot;</span>
     <span class='html_file identifier id'>html_file</span> <span class='assign token'>=</span> <span class='Html constant id'>Html</span><span class='dot token'>.</span><span class='new identifier id'>new</span>
     <span class='html_file identifier id'>html_file</span><span class='dot token'>.</span><span class='produce_html identifier id'>produce_html</span>
-  <span class='elsif elsif kw'>elsif</span> <span class='@argv ivar id'>@argv</span> <span class='and and kw'>and</span> <span class='@argv ivar id'>@argv</span><span class='dot token'>.</span><span class='include? fid id'>include?</span> <span class='string val'>&quot;-h&quot;</span>
-    <span class='puts identifier id'>puts</span> <span class='USAGE constant id'>USAGE</span>
-    <span class='Kernel constant id'>Kernel</span><span class='dot token'>.</span><span class='exit identifier id'>exit</span>
+  <span class='elsif elsif kw'>elsif</span> <span class='@argv ivar id'>@argv</span> <span class='and and kw'>and</span> <span class='@argv ivar id'>@argv</span><span class='dot token'>.</span><span class='include? fid id'>include?</span> <span class='string val'>&quot;-h&quot;</span> <span class='or or kw'>or</span> <span class='@argv ivar id'>@argv</span><span class='dot token'>.</span><span class='include? fid id'>include?</span> <span class='string val'>&quot;--help&quot;</span> <span class='or or kw'>or</span> <span class='@argv ivar id'>@argv</span><span class='dot token'>.</span><span class='include? fid id'>include?</span> <span class='string val'>&quot;--usage&quot;</span>
+    <span class='abort identifier id'>abort</span><span class='lparen token'>(</span><span class='USAGE constant id'>USAGE</span><span class='rparen token'>)</span>
   <span class='elsif elsif kw'>elsif</span> <span class='@argv ivar id'>@argv</span> <span class='and and kw'>and</span> <span class='notop op'>!</span><span class='@argv ivar id'>@argv</span><span class='dot token'>.</span><span class='empty? fid id'>empty?</span>
     <span class='unless unless kw'>unless</span> <span class='@argv ivar id'>@argv</span><span class='dot token'>.</span><span class='include? fid id'>include?</span> <span class='string val'>&quot;-pdf&quot;</span> <span class='or or kw'>or</span> <span class='@argv ivar id'>@argv</span><span class='dot token'>.</span><span class='include? fid id'>include?</span> <span class='string val'>&quot;-html&quot;</span>
-      <span class='puts identifier id'>puts</span> <span class='USAGE constant id'>USAGE</span>
-      <span class='Kernel constant id'>Kernel</span><span class='dot token'>.</span><span class='exit identifier id'>exit</span>
+      <span class='abort identifier id'>abort</span><span class='lparen token'>(</span><span class='USAGE constant id'>USAGE</span><span class='rparen token'>)</span>
     <span class='else else kw'>else</span>
       <span class='output_html identifier id'>output_html</span>
       <span class='output_pdf identifier id'>output_pdf</span>
@@ -347,7 +343,7 @@ Returns the value of attribute argv
 </div>
     
     <div id="footer">
-  Generated on Mon Oct 18 18:47:52 2010 by 
+  Generated on Tue Oct 26 20:36:04 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.6.1 (ruby-1.8.7).
 </div>

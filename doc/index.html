@@ -42,6 +42,9 @@
     <iframe id="search_frame"></iframe>
     
     <div id="content"><div id='filecontents'><p>
+Lukujärjestystyökalu
+</p>
+<p>
 Lukujärjestystyökalu lukee luentojen ja harjoitusryhmien tiedot ja
 tuottaa käyttäjän antamien parametrien mukaan pdf- ja/tai html-muotoisen
 tiedoston, jonka sisältönä on viikkokohtainen lukujärjestys
@@ -56,13 +59,7 @@ käyttöliittymää ei ole, sillä luento- ja harjoitusryhmätiedot
 erillisestä, ohjelman käyttäjän muokattavissa olevasta YAML-muotoisesta
 konfiguraatiotiedostosta. Tuloksena saatavan html-tiedoston
 CSS-tyylitiedosto on niin ikään ohjelman käyttäjän kustomoitavissa,
-mutta pdf-tiedoston ulkoasu ei luultavasti tule olemaan muokattavissa.
-</p>
-<p>
-Ohjelmaa ajettaessa käyttäjä voi määritellä komentoriviparametreina
-haluamansa tiedostoformaatit (-pdf ja -html, html vakiona jos parametreja
-ei annettu) ja tuotettavien tiedostojen nimet (tiedostonimissäkin vakiot,
-ellei parametreja annettu).
+mutta pdf-tiedoston ulkoasu ei ole muokattavissa.
 </p>
 <p>
 Ohjelma varautuu virheellisiin syöttöihin sekä komentoriviparametreissa,
@@ -72,10 +69,64 @@ konfiguraatiossa on määritelty luento alkamaan loppumisajan jälkeen,
 jätetään kyseinen kohta huomiotta ja tulostetaan käyttäjälle
 huomautus.
 </p>
+<p>
+Käyttöohje
+</p>
+<p>
+Ohjelma ajetaan komentoriviltä seuraavalla tavalla:
+</p>
+<pre class="code">
+        <span class='dot token'>.</span><span class='div op'>/</span><span class='timetable identifier id'>timetable</span> <span class='lbrack token'>[</span><span class='valinnat identifier id'>valinnat</span><span class='rbrack token'>]</span>
+                <span class='minus op'>-</span><span class='h identifier id'>h</span><span class='comma token'>,</span> <span class='minus op'>-</span><span class='minus op'>-</span><span class='help identifier id'>help</span><span class='comma token'>,</span> <span class='minus op'>-</span><span class='minus op'>-</span><span class='usage identifier id'>usage</span>           <span class='Tulostaa constant id'>Tulostaa</span> <span class='ohjelman identifier id'>ohjelman</span> <span class='k identifier id'>k</span></pre>
+<p>
+Ilman valintoja ohjelma tulostaa html-muotoisen tiedoston nimellä
+timetable.html.
+</p>
+<p>
+Ohjelma lukee luentojen ja laskuharjoitusten tiedot
+config/timetable.yml-tiedostosta. Kurssien muoto tulee noudattaa seuraavaa
+esimerkkiä:
+</p>
+<pre class="code">
+        <span class='courses identifier id'>courses</span><span class='colon op'>:</span>
+            <span class='minus op'>-</span>
+                <span class='name identifier id'>name</span><span class='colon op'>:</span> <span class='Laskennan constant id'>Laskennan</span> <span class='mallit identifier id'>mallit</span>
+                <span class='lecturer identifier id'>lecturer</span><span class='colon op'>:</span> <span class='Timo constant id'>Timo</span> <span class='Soini constant id'>Soini</span>
+                <span class='type identifier id'>type</span><span class='colon op'>:</span> <span class='LU constant id'>LU</span>
+                <span class='times identifier id'>times</span><span class='colon op'>:</span>
+                    <span class='minus op'>-</span>
+                        <span class='day identifier id'>day</span><span class='colon op'>:</span> <span class='mon identifier id'>mon</span>
+                        <span class='time identifier id'>time</span><span class='colon op'>:</span> <span class='integer val'>12</span><span class='minus op'>-</span><span class='integer val'>14</span>
+                        <span class='location identifier id'>location</span><span class='colon op'>:</span> <span class='A111 constant id'>A111</span>
+                    <span class='minus op'>-</span>
+                        <span class='day identifier id'>day</span><span class='colon op'>:</span> <span class='thu identifier id'>thu</span>
+                        <span class='time identifier id'>time</span><span class='colon op'>:</span> <span class='integer val'>14</span><span class='minus op'>-</span><span class='integer val'>16</span>
+                        <span class='location identifier id'>location</span><span class='colon op'>:</span> <span class='A111 constant id'>A111</span>
+
+            <span class='minus op'>-</span>
+                <span class='name identifier id'>name</span><span class='colon op'>:</span> <span class='Laskennan constant id'>Laskennan</span> <span class='mallit identifier id'>mallit</span>
+                <span class='lecturer identifier id'>lecturer</span><span class='colon op'>:</span> <span class='Jussi constant id'>Jussi</span> <span class='Allah constant id'>Allah</span><span class='minus op'>-</span><span class='aho identifier id'>aho</span>
+                <span class='type identifier id'>type</span><span class='colon op'>:</span> <span class='LH constant id'>LH</span>
+                <span class='times identifier id'>times</span><span class='colon op'>:</span>
+                    <span class='minus op'>-</span>
+                        <span class='day identifier id'>day</span><span class='colon op'>:</span> <span class='wed identifier id'>wed</span>
+                        <span class='time identifier id'>time</span><span class='colon op'>:</span> <span class='integer val'>16</span><span class='minus op'>-</span><span class='integer val'>18</span>
+                        <span class='location identifier id'>location</span><span class='colon op'>:</span> <span class='Eira constant id'>Eira</span>
+</pre>
+<p>
+Pakollisia tietoja ovat ‘day’ ja ‘time’, muut kohdat ovat
+valinnaisia.
+</p>
+<p>
+Name: kurssin nimi Lecturer: kurssin luennoija/laskuharjoituksen pitäjä
+Type: LU (luento) tai LH (laskuharjoitus) Times:
+</p>
+<pre class="code">
+        <span class='Day constant id'>Day</span><span class='colon op'>:</span> <span class='viikonp identifier id'>viikonp</span></pre>
 </div></div>
     
     <div id="footer">
-  Generated on Mon Oct 18 18:47:52 2010 by 
+  Generated on Tue Oct 26 20:36:03 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.6.1 (ruby-1.8.7).
 </div>
