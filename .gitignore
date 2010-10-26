@@ -1,4 +1,5 @@
 doc/*.pages
+doc/*.graffle
 lib/timetable/*.pdf
 lib/timetable/*.html
 ./*.html
