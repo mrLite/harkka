@@ -8,7 +8,7 @@ Ohjelma varautuu virheellisiin syöttöihin sekä komentoriviparametreissa, ett�
 
 ## Dokumentaatio
 
-Ohjelman YARDoc-muotoinen dokumentaatio löytyy osoitteesta http://aq.nerds.fi/harkka/doc/
+Ohjelman YARDoc-muotoinen dokumentaatio löytyy osoitteesta <http://aq.nerds.fi/harkka/doc/>
 
 ## Käyttöohje
 
