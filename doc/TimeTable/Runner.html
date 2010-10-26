@@ -161,6 +161,48 @@ A new instance of Runner.
 </li>
 
       
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#output_html-instance_method" title="#output_html (instance method)">- (Object) <strong>output_html</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#output_pdf-instance_method" title="#output_pdf (instance method)">- (Object) <strong>output_pdf</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
         <li class="public ">
   <span class="summary_signature">
     
@@ -284,7 +326,109 @@ Returns the value of attribute argv
     
     
       <div class="method_details first">
-  <p class="signature first" id="run-instance_method">
+  <p class="signature first" id="output_html-instance_method">
+  
+    - (<tt>Object</tt>) <strong>output_html</strong>  <span class="extras">(private)</span>
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/timetable/runner.rb', line 48</span>
+
+<span class='def def kw'>def</span> <span class='output_html identifier id'>output_html</span>
+  <span class='if if kw'>if</span> <span class='lparen token'>(</span><span class='html_index identifier id'>html_index</span> <span class='assign token'>=</span> <span class='@argv ivar id'>@argv</span><span class='dot token'>.</span><span class='index identifier id'>index</span> <span class='string val'>&quot;-html&quot;</span><span class='rparen token'>)</span>
+    <span class='html_filename identifier id'>html_filename</span> <span class='assign token'>=</span> <span class='@argv ivar id'>@argv</span><span class='lbrack token'>[</span><span class='html_index identifier id'>html_index</span><span class='plus op'>+</span><span class='integer val'>1</span><span class='rbrack token'>]</span>
+    
+    <span class='if if kw'>if</span> <span class='notop op'>!</span><span class='html_filename identifier id'>html_filename</span> <span class='or or kw'>or</span> <span class='html_filename identifier id'>html_filename</span> <span class='eq op'>==</span> <span class='string val'>&quot;-pdf&quot;</span>
+      <span class='puts identifier id'>puts</span> <span class='USAGE constant id'>USAGE</span>
+      <span class='exit identifier id'>exit</span><span class='lparen token'>(</span><span class='integer val'>0</span><span class='rparen token'>)</span>
+    <span class='elsif elsif kw'>elsif</span> <span class='html_filename identifier id'>html_filename</span> <span class='and and kw'>and</span> <span class='html_filename identifier id'>html_filename</span> <span class='neq op'>!=</span> <span class='string val'>&quot;-pdf&quot;</span>
+      <span class='puts identifier id'>puts</span> <span class='dstring node'>&quot;html-tiedosto: #{html_filename}&quot;</span>
+      <span class='html_file identifier id'>html_file</span> <span class='assign token'>=</span> <span class='Html constant id'>Html</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='html_filename identifier id'>html_filename</span><span class='rparen token'>)</span>
+      <span class='html_file identifier id'>html_file</span><span class='dot token'>.</span><span class='produce_html identifier id'>produce_html</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="output_pdf-instance_method">
+  
+    - (<tt>Object</tt>) <strong>output_pdf</strong>  <span class="extras">(private)</span>
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/timetable/runner.rb', line 33</span>
+
+<span class='def def kw'>def</span> <span class='output_pdf identifier id'>output_pdf</span>
+  <span class='if if kw'>if</span> <span class='lparen token'>(</span><span class='pdf_index identifier id'>pdf_index</span> <span class='assign token'>=</span> <span class='@argv ivar id'>@argv</span><span class='dot token'>.</span><span class='index identifier id'>index</span> <span class='string val'>&quot;-pdf&quot;</span><span class='rparen token'>)</span>
+    <span class='pdf_filename identifier id'>pdf_filename</span> <span class='assign token'>=</span> <span class='@argv ivar id'>@argv</span><span class='lbrack token'>[</span><span class='pdf_index identifier id'>pdf_index</span><span class='plus op'>+</span><span class='integer val'>1</span><span class='rbrack token'>]</span>
+    
+    <span class='if if kw'>if</span> <span class='notop op'>!</span><span class='pdf_filename identifier id'>pdf_filename</span> <span class='or or kw'>or</span> <span class='pdf_filename identifier id'>pdf_filename</span> <span class='eq op'>==</span> <span class='string val'>&quot;-html&quot;</span>
+      <span class='puts identifier id'>puts</span> <span class='USAGE constant id'>USAGE</span>
+      <span class='exit identifier id'>exit</span><span class='lparen token'>(</span><span class='integer val'>0</span><span class='rparen token'>)</span>
+    <span class='elsif elsif kw'>elsif</span> <span class='pdf_filename identifier id'>pdf_filename</span> <span class='and and kw'>and</span> <span class='pdf_filename identifier id'>pdf_filename</span> <span class='neq op'>!=</span> <span class='string val'>&quot;-html&quot;</span>
+      <span class='puts identifier id'>puts</span> <span class='dstring node'>&quot;pdf-tiedosto: #{pdf_filename}&quot;</span>
+      <span class='pdf_file identifier id'>pdf_file</span> <span class='assign token'>=</span> <span class='Pdf constant id'>Pdf</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='pdf_filename identifier id'>pdf_filename</span><span class='rparen token'>)</span>
+      <span class='pdf_file identifier id'>pdf_file</span><span class='dot token'>.</span><span class='produce_pdf identifier id'>produce_pdf</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="run-instance_method">
   
     - (<tt>Object</tt>) <strong>run</strong> 
   
@@ -343,7 +487,7 @@ Returns the value of attribute argv
 </div>
     
     <div id="footer">
-  Generated on Tue Oct 26 20:36:04 2010 by 
+  Generated on Wed Oct 27 01:16:18 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.6.1 (ruby-1.8.7).
 </div>

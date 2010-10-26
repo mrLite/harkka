@@ -162,6 +162,30 @@ Returns the value of attribute yaml.
 
     <ul class="summary">
       
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#index_on_matrix-instance_method" title="#index_on_matrix (instance method)">- (Object) <strong>index_on_matrix</strong>(course) </a>
+    
+
+    
+  </span>
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Etsitään kurssille oikea paikka kurssimatriisissa.
+</p>
+</div></span>
+  
+</li>
+
+      
         <li class="public ">
   <span class="summary_signature">
     
@@ -231,6 +255,32 @@ sarakkeet edustavat viikonpäiviä ja rivit kellonaikoja.
   
     <span class="summary_desc"><div class='inline'><p>
 Parsitaan matriisi pdf-tiedostoa varten.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#rows_to_strings-instance_method" title="#rows_to_strings (instance method)">- (Object) <strong>rows_to_strings</strong>(matrix) </a>
+    
+
+    
+  </span>
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Muotoillaan matriisi koostumaan pelkästään String-luokan olioista
+parsimalla hashit stringeiksi, sillä Prawn::Table hyväksyy vain
+merkkijonoja tai Prawn::Table:Cell-olioita sisältäviä taulukoita.
 </p>
 </div></span>
   
@@ -390,7 +440,55 @@ Returns the value of attribute yaml
     
     
       <div class="method_details first">
-  <p class="signature first" id="parse-instance_method">
+  <p class="signature first" id="index_on_matrix-instance_method">
+  
+    - (<tt>Object</tt>) <strong>index_on_matrix</strong>(course)  <span class="extras">(private)</span>
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Etsitään kurssille oikea paikka kurssimatriisissa.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+53
+54
+55
+56
+57
+58
+59</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/timetable/data_parser.rb', line 53</span>
+
+<span class='def def kw'>def</span> <span class='index_on_matrix identifier id'>index_on_matrix</span><span class='lparen token'>(</span><span class='course identifier id'>course</span><span class='rparen token'>)</span>
+  <span class='rows identifier id'>rows</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='string val'>&quot;8-10&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>0</span><span class='comma token'>,</span> <span class='string val'>&quot;10-12&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>1</span><span class='comma token'>,</span> <span class='string val'>&quot;12-14&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>2</span><span class='comma token'>,</span> <span class='string val'>&quot;14-16&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>3</span><span class='comma token'>,</span> <span class='string val'>&quot;16-18&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>4</span><span class='comma token'>,</span> <span class='string val'>&quot;18-20&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>5</span> <span class='rbrace token'>}</span>
+  <span class='columns identifier id'>columns</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='string val'>&quot;mon&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>1</span><span class='comma token'>,</span> <span class='string val'>&quot;tue&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>2</span><span class='comma token'>,</span> <span class='string val'>&quot;wed&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>3</span><span class='comma token'>,</span> <span class='string val'>&quot;thu&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>4</span><span class='comma token'>,</span> <span class='string val'>&quot;fri&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>5</span><span class='rbrace token'>}</span>
+  <span class='x identifier id'>x</span> <span class='assign token'>=</span> <span class='rows identifier id'>rows</span><span class='lbrack token'>[</span><span class='course identifier id'>course</span><span class='lbrack token'>[</span><span class='symbol val'>:time</span><span class='rbrack token'>]</span><span class='rbrack token'>]</span>
+  <span class='y identifier id'>y</span> <span class='assign token'>=</span> <span class='columns identifier id'>columns</span><span class='lbrack token'>[</span><span class='course identifier id'>course</span><span class='lbrack token'>[</span><span class='symbol val'>:day</span><span class='rbrack token'>]</span><span class='rbrack token'>]</span>
+  <span class='@timetable_matrix ivar id'>@timetable_matrix</span><span class='lbrack token'>[</span><span class='x identifier id'>x</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='y identifier id'>y</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='course identifier id'>course</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="parse-instance_method">
   
     - (<tt>Object</tt>) <strong>parse</strong> 
   
@@ -516,12 +614,80 @@ Parsitaan matriisi pdf-tiedostoa varten.
 </table>
 </div>
     
+      <div class="method_details ">
+  <p class="signature " id="rows_to_strings-instance_method">
+  
+    - (<tt>Object</tt>) <strong>rows_to_strings</strong>(matrix)  <span class="extras">(private)</span>
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Muotoillaan matriisi koostumaan pelkästään String-luokan olioista
+parsimalla hashit stringeiksi, sillä Prawn::Table hyväksyy vain
+merkkijonoja tai Prawn::Table:Cell-olioita sisältäviä taulukoita.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/timetable/data_parser.rb', line 62</span>
+
+<span class='def def kw'>def</span> <span class='rows_to_strings identifier id'>rows_to_strings</span><span class='lparen token'>(</span><span class='matrix identifier id'>matrix</span><span class='rparen token'>)</span>
+  <span class='table_matrix identifier id'>table_matrix</span> <span class='assign token'>=</span> <span class='matrix identifier id'>matrix</span><span class='dot token'>.</span><span class='map identifier id'>map</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='table_row identifier id'>table_row</span><span class='bitor op'>|</span>
+    <span class='table_row identifier id'>table_row</span> <span class='assign token'>=</span> <span class='table_row identifier id'>table_row</span><span class='dot token'>.</span><span class='map identifier id'>map</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='slot identifier id'>slot</span><span class='bitor op'>|</span>
+      <span class='if if kw'>if</span> <span class='slot identifier id'>slot</span><span class='dot token'>.</span><span class='class identifier id'>class</span> <span class='eq op'>==</span> <span class='Hash constant id'>Hash</span> <span class='and and kw'>and</span> <span class='slot identifier id'>slot</span><span class='dot token'>.</span><span class='empty? fid id'>empty?</span>
+        <span class='slot identifier id'>slot</span> <span class='assign token'>=</span> <span class='string val'>&quot;&quot;</span>
+      <span class='elsif elsif kw'>elsif</span> <span class='slot identifier id'>slot</span><span class='dot token'>.</span><span class='class identifier id'>class</span> <span class='eq op'>==</span> <span class='Hash constant id'>Hash</span> <span class='and and kw'>and</span> <span class='notop op'>!</span><span class='slot identifier id'>slot</span><span class='dot token'>.</span><span class='empty? fid id'>empty?</span>
+        <span class='slot_string identifier id'>slot_string</span> <span class='assign token'>=</span> <span class='slot identifier id'>slot</span><span class='lbrack token'>[</span><span class='symbol val'>:name</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span><span class='plus op'>+</span><span class='string val'>&quot; (&quot;</span><span class='plus op'>+</span><span class='slot identifier id'>slot</span><span class='lbrack token'>[</span><span class='symbol val'>:type</span><span class='rbrack token'>]</span><span class='plus op'>+</span><span class='string val'>&quot;)&quot;</span><span class='plus op'>+</span><span class='string val'>&quot;\n&quot;</span>
+        <span class='slot_string identifier id'>slot_string</span> <span class='lshft op'>&lt;&lt;</span> <span class='slot identifier id'>slot</span><span class='lbrack token'>[</span><span class='symbol val'>:location</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span><span class='plus op'>+</span><span class='string val'>&quot;\n&quot;</span>
+        <span class='slot_string identifier id'>slot_string</span> <span class='lshft op'>&lt;&lt;</span> <span class='slot identifier id'>slot</span><span class='lbrack token'>[</span><span class='symbol val'>:lecturer</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span>
+        <span class='slot identifier id'>slot</span> <span class='assign token'>=</span> <span class='slot_string identifier id'>slot_string</span>
+      <span class='else else kw'>else</span>
+        <span class='slot identifier id'>slot</span>
+      <span class='end end kw'>end</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 </div>
     
     <div id="footer">
-  Generated on Tue Oct 26 20:36:04 2010 by 
+  Generated on Wed Oct 27 01:16:18 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.6.1 (ruby-1.8.7).
 </div>
